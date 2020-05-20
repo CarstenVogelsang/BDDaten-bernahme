@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33A21AD8-0B08-4D0D-AEA5-4DB922363E75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BDDatenbankLibraryCRM</RootNamespace>
+    <AssemblyName>BDDatenbankLibraryCRM</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataHelperBDDatenbankTabelle.cs" />
+    <Compile Include="HelperClassMetadata.cs" />
+    <Compile Include="ORMDataModelCRMCode\BasisUnternehmenStandort.cs" />
+    <Compile Include="ORMDataModelCRMCode\BasisUnternehmenStandort.Designer.cs">
+      <DependentUpon>BasisUnternehmenStandort.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelCRMCode\BDDatenbankTabelle.cs" />
+    <Compile Include="ORMDataModelCRMCode\BDDatenbankTabelle.Designer.cs">
+      <DependentUpon>BDDatenbankTabelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelCRMCode\BDDatenbankTabelleFeld.cs" />
+    <Compile Include="ORMDataModelCRMCode\BDDatenbankTabelleFeld.Designer.cs">
+      <DependentUpon>BDDatenbankTabelleFeld.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelCRMCode\BDKundeEinzelhändler.cs" />
+    <Compile Include="ORMDataModelCRMCode\BDKundeEinzelhändler.Designer.cs">
+      <DependentUpon>BDKundeEinzelhändler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelCRMCode\ConnectionHelper.cs" />
+    <Compile Include="ORMDataModelCRMCode\GeoAdresse.cs" />
+    <Compile Include="ORMDataModelCRMCode\GeoAdresse.Designer.cs">
+      <DependentUpon>GeoAdresse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORMDataModelCRMCode\HelperDatentypGenerisch.cs" />
+    <Compile Include="ORMDataModelCRMCode\HelperDatentypGenerisch.Designer.cs">
+      <DependentUpon>HelperDatentypGenerisch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ORMDataModelCRM.xpo" />
+    <None Include="ORMDataModelCRM.xpo.diagram">
+      <DependentUpon>ORMDataModelCRM.xpo</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
